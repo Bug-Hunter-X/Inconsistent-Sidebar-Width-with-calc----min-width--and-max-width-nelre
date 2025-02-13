@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error: unexpected behavior when using `calc()` with percentages and multiple units.  The intention is to create a sidebar that takes up 20% of the viewport width, with a minimum width of 200px and a maximum width of 400px. However, using `min-width` and `max-width` directly with `calc()` often produces unexpected results in different browsers.
+
+```css
+.sidebar {
+  width: calc(20% + 200px);
+  min-width: 200px;
+  max-width: 400px;
+}
+```
+
+The issue is that the `min-width` and `max-width` declarations might not be correctly applied,  leading to the width exceeding 400px or falling below 200px depending on the viewport width and browser's interpretation of the CSS.
