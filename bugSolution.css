@@ -1,0 +1,21 @@
+The solution avoids directly using `min-width` and `max-width` with `calc()`. Instead, it employs media queries to set appropriate width ranges based on the viewport's size:
+
+```css
+.sidebar {
+  width: 20%;
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .sidebar {
+    width: 400px;
+  }
+}
+```
+
+This approach ensures that the sidebar's width will never exceed 400px, and will be at least 200px, while maintaining the intended 20% width for most cases.  It’s also more reliable and cross-browser compatible than relying solely on `calc()` for both width calculation and constraint enforcement.
